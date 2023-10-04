@@ -32,7 +32,7 @@ class SmallBall:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
         self.image = load_image('ball21x21.png')
-        self.drop_speed = random.randint(1, 10)
+        self.drop_speed = random.randint(6, 15)
 
     def update(self):
         if self.y > 30 + 31:
@@ -48,7 +48,7 @@ class BigBall:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
         self.image = load_image('ball41x41.png')
-        self.drop_speed = random.randint(1, 10)
+        self.drop_speed = random.randint(6, 15)
 
     def update(self):
         if self.y > 30 + 41:
