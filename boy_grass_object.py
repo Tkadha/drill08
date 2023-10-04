@@ -34,12 +34,23 @@ class SmallBall:
         self.image = load_image('ball21x21.png')
 
     def update(self):
-        if self.y >= 50:
+        if self.y >= 30+21:
             self.y -= 5
 
     def draw(self):
         self.image.draw(self.x,self.y)
 
+class BigBall:
+    def __init__(self):
+        self.x, self.y = random.randint(50, 750), 599
+        self.image = load_image('ball41x41.png')
+
+    def update(self):
+        if self.y >= 30+41:
+            self.y -= 5
+
+    def draw(self):
+        self.image.draw(self.x,self.y)
 
 def handle_events():
     global running
@@ -57,6 +68,7 @@ def reset_world():
     global team
     global world
     global small_ball
+    global big_ball
     running = True
     world = []
 
@@ -67,6 +79,8 @@ def reset_world():
     world += team
     small_ball = [SmallBall() for i in range(10)]
     world += small_ball
+    big_ball = [BigBall() for i in range(10)]
+    world += big_ball
 
 def update_world():
     for o in world:
