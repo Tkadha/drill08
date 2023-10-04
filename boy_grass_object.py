@@ -88,7 +88,7 @@ def reset_world():
     balls = random.randint(0, 20)
     small_ball = [SmallBall() for i in range(balls)]
     world += small_ball
-    big_ball = [BigBall() for i in range(20-balls)]
+    big_ball = [BigBall() for i in range(20 - balls)]
     world += big_ball
 
 
