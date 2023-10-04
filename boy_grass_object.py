@@ -35,24 +35,30 @@ class SmallBall:
         self.drop_speed = random.randint(1, 10)
 
     def update(self):
-        if self.y >= 30+21:
+        if self.y > 30 + 31:
             self.y -= self.drop_speed
+        else:
+            self.y = 30 + 31
 
     def draw(self):
-        self.image.draw(self.x,self.y)
+        self.image.draw(self.x, self.y)
+
 
 class BigBall:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
         self.image = load_image('ball41x41.png')
-        self.drop_speed = random.randint(1,10)
+        self.drop_speed = random.randint(1, 10)
 
     def update(self):
-        if self.y >= 30+41:
+        if self.y > 30 + 41:
             self.y -= self.drop_speed
+        else:
+            self.y = 30 + 41
 
     def draw(self):
-        self.image.draw(self.x,self.y)
+        self.image.draw(self.x, self.y)
+
 
 def handle_events():
     global running
@@ -83,6 +89,7 @@ def reset_world():
     world += small_ball
     big_ball = [BigBall() for i in range(10)]
     world += big_ball
+
 
 def update_world():
     for o in world:
